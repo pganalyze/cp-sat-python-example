@@ -18,4 +18,4 @@ Running the model is as simple as:
 $ python shift_schedule.py
 ```
 
-Try to tweak the schedule for yourself!
+Try it for yourself and tweak the schedule!
