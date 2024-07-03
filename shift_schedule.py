@@ -56,12 +56,11 @@ for d in days:
               == 1)
 
 # Two restocking shifts should not be adjacent
-for e in employees:
-    for i in range(len(days)-1):
-        model.add(schedule[e]["Restocker"][days[i]]["Evening"] +
+for i in range(len(days)-1):
+    model.add(sum(schedule[e]["Restocker"][days[i]]["Evening"] +
                   schedule[e]["Restocker"][days[i+1]]["Morning"]
-                  <= 1)
-
+                  for e in employees)
+              <= 1)
 
 # An employee can only work one role per shift
 for e in employees:
